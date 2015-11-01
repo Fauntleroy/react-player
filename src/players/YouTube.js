@@ -69,6 +69,10 @@ export default class YouTube extends Base {
     if (state.data === YT.PlayerState.BUFFERING) this.props.onBuffer()
     if (state.data === YT.PlayerState.ENDED) this.props.onEnded()
   }
+  onReady () {
+    super.onReady()
+    this.player.playVideo()
+  }
   pause () {
     if (!this.player) return
     this.player.pauseVideo()
