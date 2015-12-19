@@ -32,7 +32,7 @@ export default class ReactPlayer extends Component {
     }
   }
   progress = () => {
-    if (this.props.url) {
+    if (this.props.url && this.refs.player) {
       let progress = {}
       const loaded = this.refs.player.getFractionLoaded()
       const played = this.refs.player.getFractionPlayed()
