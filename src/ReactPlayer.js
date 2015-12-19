@@ -7,6 +7,7 @@ import players from './players'
 const PROGRESS_FREQUENCY = 500
 
 export default class ReactPlayer extends Component {
+  static displayName = 'ReactPlayer'
   static propTypes = propTypes
   static defaultProps = defaultProps
   static canPlay (url) {
