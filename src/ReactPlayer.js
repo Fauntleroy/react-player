@@ -21,7 +21,8 @@ export default class ReactPlayer extends Component {
   shouldComponentUpdate (nextProps) {
     return (
       this.props.url !== nextProps.url ||
-      this.props.playing !== nextProps.playing
+      this.props.playing !== nextProps.playing ||
+      this.props.volume !== nextProps.volume
     )
   }
   seekTo = fraction => {
