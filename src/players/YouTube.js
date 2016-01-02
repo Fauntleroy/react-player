@@ -40,9 +40,12 @@ export default class YouTube extends Base {
         if (previousOnReady) previousOnReady()
         resolve(window[SDK_GLOBAL])
       }
-      loadScript(SDK_URL, err => {
-        if (err) reject(err)
-      })
+      if (!this.loadingSDK) {
+        loadScript(SDK_URL, err => {
+          if (err) reject(err)
+        })
+        this.loadingSDK = true
+      }
     })
   }
   load (url, playing) {
