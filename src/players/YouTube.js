@@ -69,7 +69,10 @@ export default class YouTube extends Base {
           ...this.props.youtubeConfig.playerVars
         },
         events: {
-          onReady: this.onReady,
+          onReady: () => {
+            // Only ready up if url hasn't changed
+            if (url === this.props.url) this.onReady()
+          },
           onStateChange: this.onStateChange,
           onError: this.props.onError
         }
