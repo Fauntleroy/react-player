@@ -5,10 +5,18 @@ import ReactPlayer from './ReactPlayer'
 export default class App extends Component {
   state = {
     url: null,
-    playing: false,
+    playing: true,
     volume: 0.8,
     played: 0,
-    loaded: 0
+    loaded: 0,
+    youtubeConfig: {
+      preload: true
+    }
+  }
+  componentDidMount () {
+    this.setState({
+      url: 'https://www.youtube.com/watch?v=k7WyJ8CQl9I'
+    })
   }
   load = url => {
     this.setState({ url, playing: true })
